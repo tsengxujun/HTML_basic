@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>醉翁亭記</title>
+    <style>
+        body {
+            font-size: 22px;
+            font-family: '標楷體', sans-serif;
+            color: black;
+            background-color: #ffffcc;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #mainContent {
+            font-size: 38px;
+            font-family: '微軟正黑體', sans-serif;
+            color: maroon;
+            letter-spacing: 9px;
+            background-color: lightyellow;
+            padding: 22px;
+            background-image: url(line.png);
+            background-size: cover;
+            display: inline-block;
+
+        }
+
+        p ins {
+            text-decoration: underline;
+            color: blue;
+            font-style: italic;
+        }
+        p span {
+            text-decoration: overline;
+            color: rgb(10, 99, 24);
+            font-family: '標楷體', sans-serif;
+        }
+
+        #borderedText {
+            font-size: 26px;
+            font-family: '標楷體', sans-serif;
+            color: maroon;
+            background-color: #fafacc;
+            line-height: 1.9;
+            padding: 22px;
+            border: 5px solid orange;
+            margin: 22px;
+            position: relative;
+            background-image: url(flower.gif);
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            text-align: left;
+        }
+
+        #borderedText::before {
+            content: "";
+            background-image: url(flower.jpg);
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainContent">
+        醉翁亭記 
+    </div>
+    <p style="text-indent: 1cm;">
+        環滁皆山也。其西南諸峯，林壑尤美，望之蔚然而深秀者，<ins>琅邪</ins>也。山行六七里，漸聞水聲潺潺，而瀉出于兩峯之間者，<ins>釀泉</ins>也。峯回路轉，有亭翼然，臨于泉上者，<ins>醉翁亭</ins>也。作亭者誰？山之僧曰<span>智遷</span>也。名之者誰？<span>太守</span>自謂也。太守與客來飲于此，飲少輒醉，而年又最高，故自號曰<span>醉翁</span>也。醉翁之意不在酒，在乎山水之間也。山水之樂，得之心而寓之酒也。
+    </p>
+
+    <div id="borderedText" >
+        若夫日出而林霏開，雲歸而巖穴暝，晦明變化者，山間之朝暮也。野芳發而幽香，佳木秀而繁陰，風霜高潔，水落而石出者，山間之四時也。朝而往，暮而歸，四時之景不同，而樂亦無窮也。
+    </div>
+</body>
+</html>

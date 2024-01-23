@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Song List</title>
+  <style>
+    body {
+      background-color: burlywood;
+    }
+
+    .heading {
+      background-image: url(bg01.gif);
+      background-color: #333;
+      color: #fff;
+    }
+
+    .odd {
+      background-image: url(bg02.gif);
+      background-color: #f5f5f5;
+    }
+
+    .even {
+      background-image: url(bg03.gif);
+      background-color: #ccc;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #270c0c;
+    }
+    
+    th:first-child,
+    td:first-child {
+    border-right: 1px solid #270c0c; /* 在第一列的 th 和 td 中間添加分隔線 */
+    }
+  </style>
+</head>
+
+<body>
+
+<script>
+  // 定義歌曲資料
+  var songs = [
+    ["歌曲名稱", "演唱者"],
+    ["阿蜜特", "張惠妹"],
+    ["舞孃", "蔡依林"],
+    ["懷珠", "楊宗緯"],
+    ["追追追", "黃妃"],
+    ["秋雨那一眠", "江蕙 feat. 伍思凱"],
+    ["愛你", "陳芳語"],
+    ["天天想你","張雨生"],
+    ["一剪梅","費玉清"],
+    ["獨上西樓","鄧麗君"]
+  ];
+
+  // 建立表格
+  var table = document.createElement("table");
+
+  // 設定表格標題
+  var headerRow = table.insertRow(0);
+  headerRow.className = "heading"; // 設定 heading class
+  var headerCell1 = headerRow.insertCell(0);
+  headerCell1.textContent = "歌曲名稱";
+  var headerCell2 = headerRow.insertCell(1);
+  headerCell2.textContent = "演唱者";
+
+  // 使用迴圈填充表格資料
+  for (var i = 1; i < songs.length; i++) {
+    var row = table.insertRow(i);
+    row.className = (i % 2 === 0) ? "even" : "odd"; // 根據奇偶設定不同的 class
+    for (var j = 0; j < songs[i].length; j++) {
+      var cell = row.insertCell(j);
+      cell.textContent = songs[i][j];
+    }
+  }
+
+  // 將表格附加到body中
+  document.body.appendChild(table);
+</script>
+
+</body>
+
+</html>

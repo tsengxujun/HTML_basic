@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Background</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            font-family: 'Arial', sans-serif;
+            font-size: 1.5em;
+            line-height: 1.5;
+            padding: 20px;
+            margin: 0;
+            background-image: url(toy.jpg);
+            background-repeat: round;
+            background-size: 30%;
+            animation: moveBackground 10s alternate-reverse infinite;
+        }
+
+        @keyframes moveBackground {
+            from {
+                background-position: 0% 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        大花貓，躲在屋頂上，
+        一邊洗臉，一邊曬太陽。
+        大花貓，躲在屋頂上，
+        一邊洗臉，一邊曬太陽。
+        大花貓，躲在屋頂上，
+        一邊洗臉，一邊曬太陽。
+        大花貓，躲在屋頂上，
+        一邊洗臉，一邊曬太陽。
+                                    --大花貓
+    </pre>
+</body>
+</html>

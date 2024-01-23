@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Appearing Image</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #randomImage {
+            width: 3em;
+            height: 3em;
+            background-image: url(fig1.JPG);
+            background-size: cover;
+            position: absolute;
+            animation: fadeIn 0.5s ease-out infinite, moveImage infinite;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveImage {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(50vw, 0);
+            }
+            50% {
+                transform: translate(50vw, 50vh);
+            }
+            75% {
+                transform: translate(0, 50vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="randomImage"></div>
+
+    <script>
+        function getRandomPosition() {
+            const x = Math.floor(Math.random() * (window.innerWidth - 60)); // 60 是圖片的寬度
+            const y = Math.floor(Math.random() * (window.innerHeight - 60)); // 60 是圖片的高度
+            return { x, y };
+        }
+
+        const randomImage = document.getElementById("randomImage");
+
+        function moveImage() {
+            const newPosition = getRandomPosition();
+            randomImage.style.left = `${newPosition.x}px`;
+            randomImage.style.top = `${newPosition.y}px`;
+        }
+
+        randomImage.addEventListener("animationiteration", moveImage);
+    </script>
+    <h3 style="text-align: center;">
+        大花貓，躲在屋頂上，
+        一邊洗臉，一邊曬太陽。<br/>
+        大花貓，躲在屋頂上，
+        一邊洗臉，一邊曬太陽。<br/>
+        大花貓，躲在屋頂上，
+        一邊洗臉，一邊曬太陽。<br/>
+        大花貓，躲在屋頂上，
+        一邊洗臉，一邊曬太陽。<br/>
+        <br/>
+                                    --大花貓
+    </h3>
+</body>
+</html>

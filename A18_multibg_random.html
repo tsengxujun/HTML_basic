@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Appearing Images</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .randomImage {
+            width: 3em;
+            height: 3em;
+            background-size: cover;
+            position: absolute;
+            animation: fadeIn 0.5s ease-out infinite, moveImage infinite;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveImage {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(50vw, 0);
+            }
+            50% {
+                transform: translate(50vw, 50vh);
+            }
+            75% {
+                transform: translate(0, 50vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function getRandomPosition(radius) {
+            const angle = Math.random() * 2 * Math.PI;
+            const x = window.innerWidth / 2 + Math.cos(angle) * radius;
+            const y = window.innerHeight / 2 + Math.sin(angle) * radius;
+            return { x, y };
+        }
+
+        const numImages = 10;
+
+        for (let i = 0; i < numImages; i++) {
+            const randomImage = document.createElement("div");
+            randomImage.className = "randomImage";
+            randomImage.style.backgroundImage = `url(image${i + 1}.jpg)`;
+
+            const radius = 100 + i * 20; // 增加半徑，以確保圖片不會太靠近中心
+            const position = getRandomPosition(radius);
+
+            randomImage.style.left = `${position.x}px`;
+            randomImage.style.top = `${position.y}px`;
+
+            document.body.appendChild(randomImage);
+        }
+    </script>
+</body>
+</html>

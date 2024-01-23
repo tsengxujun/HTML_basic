@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matchstick Men Patterns</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .matchstickMan {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            animation: fadeIn 0.5s ease-out infinite, moveImage infinite;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveImage {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(50vw, 0);
+            }
+            50% {
+                transform: translate(50vw, 50vh);
+            }
+            75% {
+                transform: translate(0, 50vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function getRandomPosition(radius) {
+            const angle = Math.random() * 2 * Math.PI;
+            const x = window.innerWidth / 2 + Math.cos(angle) * radius;
+            const y = window.innerHeight / 2 + Math.sin(angle) * radius;
+            return { x, y };
+        }
+
+        const numMatchstickMen = 10;
+
+        for (let i = 1; i <= numMatchstickMen; i++) {
+            const matchstickMan = document.createElement("img");
+            matchstickMan.className = "matchstickMan";
+            matchstickMan.src = `matchstick-man${i}.svg`;
+
+            const radius = 100 + i * 20; // 增加半徑，以確保圖片不會太靠近中心
+            const position = getRandomPosition(radius);
+
+            matchstickMan.style.left = `${position.x}px`;
+            matchstickMan.style.top = `${position.y}px`;
+
+            document.body.appendChild(matchstickMan);
+        }
+    </script>
+</body>
+</html>

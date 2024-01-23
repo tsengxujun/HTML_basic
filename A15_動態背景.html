@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            animation: backgroundAnimation 10s infinite alternate;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin: 10px; /* 調整標題的間距 */
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-color: rgb(130, 175, 124);
+            }
+            50% {
+                background-color: rgb(210, 106, 82);
+            }
+            100% {
+                background-color: rgb(130, 175, 124);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>臨江仙</h1>
+    <h1>玉樓春</h1>
+</body>
+</html>

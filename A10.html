@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .woman {
+      max-width: 100%;
+      height: auto;
+      filter: blur(0);
+    }
+
+    .shadow {
+      position: absolute;
+      bottom: 10; /* 調整影子位置在底部 */
+      right: 100%; /* 調整影子位置在中央 */
+      transform: translateX(-50%); /* 將影子居中 */
+      max-width: 100%;
+      height: auto;
+      filter: blur(10px) grayscale(50%); /* 調整模糊效果 */
+      opacity: 0.7; /* 調整影子透明度 */
+      box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3); /* 調整陰影距離 */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="woman" src="a_standing_woman.jpg" alt="Woman">
+    <img class="shadow" src="a_standing_woman.jpg" alt="Shadow">
+  </div>
+</body>
+</html>
